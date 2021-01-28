@@ -19,6 +19,7 @@
 .covid-update-card {
   margin-left: 10em;
   margin-top: 2em;
+  min-width: 350px;
 }
 
 .card-news {
@@ -39,4 +40,11 @@
     margin-left: 5em;
     margin-top: 2em;
   }
+}
+
+.card-img-cocktail {
+  max-height: 24em;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

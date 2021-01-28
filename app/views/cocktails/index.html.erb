@@ -28,7 +28,9 @@
             <% @cocktails.each do |cocktail| %>
               <div class="col-md-6">
                 <div class="card m-2 card-style">
-                   <div class="card-body">
+                <% cocktail.photo.attached? ? @image = "//res.cloudinary.com/apak/image/upload/#{cocktail.photo.key}": @image = cocktail.image_scr %>
+                <img class="card-img-cocktail" src="<%= @image %>" alt="Card image cap">
+                   <div class="card-body"> 
                       <h5 class="card-title"><%= cocktail.name %></h5>
                       <%# <h5 class="card-title"><%= cocktail.rating %></h5>
                       <%= link_to 'View Cocktail', cocktail_path(cocktail), class: 'btn btn-ghost' %>
