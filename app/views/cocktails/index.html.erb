@@ -3,14 +3,13 @@
       <div class="col-lg-5 order-sm-1 order-lg-0 order-md-1 home-bg-img">
         <h1 class="logo-text">MR  RED  NECK</h1>
       </div>
-
       <div class="col-lg-7 order-sm-2 order-lg-2 order-md-2">
         <nav>
           <ul>
-            <li><a class="nav-link" href="#about">About</a></li>
+            <li class="display-none"><a class="nav-link d-sm-none d-md-block" href="#about">About</a></li>
             <li><a class="nav-link" href="#reservation">Reservation</a></li>
             <li><a class="nav-link" href=""><i class="fab fa-instagram"></i></a></li>
-            <li><%= link_to 'Add New Cocktail', new_cocktail_path, class: 'btn btn-flat' %></li>
+            <li><%= link_to 'Add Cocktail', new_cocktail_path, class: 'btn btn-flat' %></li>
           </ul>
         </nav>
         <div class="covid-update-card">
@@ -26,7 +25,7 @@
         <div class="container">
           <div class="row">
             <% @cocktails.each do |cocktail| %>
-              <div class="col-md-6">
+              <div class="col-lg-6 card-container">
                 <div class="card m-2 card-style">
                 <% cocktail.photo.attached? ? @image = "//res.cloudinary.com/apak/image/upload/#{cocktail.photo.key}": @image = cocktail.image_scr %>
                 <img class="card-img-cocktail" src="<%= @image %>" alt="Card image cap">
@@ -45,11 +44,11 @@
             <p id="about-parag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod sagittis mollis. 
               Nulla quis orci mollis, rutrum quam id, rhoncus massa. Donec ullamcorper, ligula non porta tempor, 
               purus libero laoreet orci, sit amet auctor velit odio in erat. Nam hendrerit a nisl vel sollicitudin. 
-              Nullam est erat, blandit at neque eu, egestas dapibus ipsum. In eu hendrerit erat, nec eleifend nulla. 
+              Nullam est erat, blandit at neque eu, egestas dapibus ipsum. <span class="display-none">In eu hendrerit erat, nec eleifend nulla. 
               Suspendisse ac elementum risus, sit amet ultricies mi. Orci varius natoque penatibus et magnis dis parturient montes, 
               nascetur ridiculus mus. Etiam quis tellus efficitur, vehicula lacus nec, fringilla ligula. Donec vitae lacinia ante, 
               nec pharetra libero. Duis faucibus, eros vitae vulputate iaculis, arcu eros venenatis tortor, ut scelerisque metus turpis id ex. 
-              Nullam nec arcu ac eros mattis dignissim.
+              Nullam nec arcu ac eros mattis dignissim.</span> 
             </p>
         </div>
         <div id="reservation">

@@ -1,7 +1,20 @@
+//cocktail card style
 .card-style {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   text-align: center;
-  border-radius: 4px;
+}
+
+.card-container {
+  margin-left: 4em;
+  max-width: 340px;
+  border-radius: $border-radius;
+}
+
+.card-img-cocktail {
+  max-height: 24em;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .card-category {
@@ -12,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: $border-radius;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -22,15 +35,17 @@
   min-width: 350px;
 }
 
+//covid update card style
 .card-news {
   margin-top: 1em;
   margin-bottom: 1em;
   width: 80%;
+  min-width: 300px;
   min-height: 42vh;
   padding: 24px 20px;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: $white;
   box-shadow: 1px 1px 11px 4px rgba(27, 26, 26, 0.9);
   text-align: center;
 }
@@ -40,11 +55,4 @@
     margin-left: 5em;
     margin-top: 2em;
   }
-}
-
-.card-img-cocktail {
-  max-height: 24em;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }

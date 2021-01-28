@@ -1,0 +1,19 @@
+.show-title {
+  color: $tomato;
+  font-size: 4em;
+  font-weight: 900;
+}
+
+.show-banner {
+  margin: 2rem auto 4rem;
+}
+
+.show-text {
+  background-color: $tomato;
+  color: $white;
+  padding: 0.3em;
+  font-weight: 500;
+  font-size: 1.1em;
+  margin-left: 2em;
+  border-radius: $border-radius;
+}
