@@ -1,31 +1,21 @@
-// about in nav-bar display none at md and sm device
-@media only screen and (max-width: 768px) {
-  .display-none {
-    display: none;
-  }
-  ul {
-    justify-content: space-evenly;
-  }
-}
 // margin between nav items changes at sm md lg device
 ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   li {
     padding-left: 0.4em;
     margin-top: 1em;
   }
 }
 
-//nav link style
-.nav-link {
-  color: $green;
-  font-size: 1.2em;
-  font-weight: 500;
-  &:hover {
-    text-decoration: underline;
-    color: $green;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  .logo {
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
   }
 }
