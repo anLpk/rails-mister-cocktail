@@ -1,21 +1,19 @@
 // margin between nav items changes at sm md lg device
-ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  justify-content: space-evenly;
-  li {
-    padding-left: 0.4em;
-    margin-top: 1em;
+.navbar {
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    li {
+      padding-left: 0.4em;
+      margin-top: 1em;
+    }
   }
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  .logo {
-    border-radius: 50%;
-    width: 4em;
-    height: 4em;
-  }
+.logo {
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
 }
