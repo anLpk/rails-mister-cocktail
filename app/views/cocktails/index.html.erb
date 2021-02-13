@@ -1,77 +1,47 @@
 <div class="contaier">
-    <div class="row d-md-flex d-lg-flex no-gutters">
-      <div class="col-lg-5 order-sm-1 order-lg-0 order-md-1 home-bg-img">
-        <h1 class="logo-text">MR  RED  NECK</h1>
+  <div class="row d-md-flex d-lg-flex no-gutters">
+    <div class="col-lg-5 order-sm-1 order-lg-0 order-md-1 home-bg-img">
+      <h1 class="logo-text">MR  RED  NECK</h1>
+    </div>
+    <div class="col-lg-7 order-sm-2 order-lg-2 order-md-2">
+      <div class="create-coctail-btn text-center mt-5">
+        <%= link_to 'Create Cocktail', new_cocktail_path, class: 'btn btn-ghost' %>
       </div>
-      <div class="col-lg-7 order-sm-2 order-lg-2 order-md-2">
-        </nav>
-        <div class="covid-update-card">
-          <div class="card-news">
-            <h2>Covid Update</h2>
-            <p>Our team are taking a break because of Covid.</p>
-            <p>We will announce here once we re-open!</p>
-            <p>Until then keep drinking in your home.</p>
-            <p><i class="fas fa-arrow-left"></i>And never forget <span>1.5m</span> <i class="fas fa-arrow-right"></i></p>
-            <p> 🍺 🍻 🥂 🍷 🥃 🍸 🍹 🧉 🍾 🧊</p>
-          </div>
+      <div class="covid-update-card">
+        <div class="card-news">
+          <h2>Covid Update</h2>
+          <p>Our team are taking a break because of Covid.</p>
+          <p>We will announce here once we re-open!</p>
+          <p>Until then keep drinking in your home.</p>
+          <p><i class="fas fa-arrow-left"></i> And never forget <span>1.5m</span> <i class="fas fa-arrow-right"></i></p>
+          <p> 🍺 🍻 🥂 🍷 🥃 🍸 🍹 🧉 🍾 🧊</p>
         </div>
-        <div class="container">
-          <div class="row">
-            <% @cocktails.each do |cocktail| %>
-              <div class="col-lg-6 card-container">
-                <div class="card m-2 card-style">
+      </div>
+      <div class="container">
+        <div class="row">
+          <% @cocktails.each do |cocktail| %>
+            <div class="col-lg-6 card-container">
+              <div class="card m-2 card-style">
                 <% cocktail.photo.attached? ? @image = "//res.cloudinary.com/apak/image/upload/#{cocktail.photo.key}": @image = cocktail.image_scr %>
                 <img class="card-img-cocktail" src="<%= @image %>" alt="Card image cap">
-                   <div class="card-body"> 
-                      <h5 class="card-title"><%= cocktail.name %></h5>
-                      <%# <h5 class="card-title"><%= cocktail.rating %></h5>
-                      <%= link_to 'View Cocktail', cocktail_path(cocktail), class: 'btn btn-ghost' %>
-                    </div>
+                  <div class="card-body"> 
+                    <h5 class="card-title"><%= cocktail.name %></h5>
+                    <%# <h5 class="card-title"><%= cocktail.rating %></h5>
+                    <%= link_to 'View Cocktail', cocktail_path(cocktail), class: 'btn btn-ghost' %>
                   </div>
-                  </div>
-              <% end %>
+              </div>
+            </div>
+          <% end %>
           </div>
-        </div>
-        <div id="about">
+          <div id="about">
           <h2 class="text-center" id="title">About Us</h2>
-            <p id="about-parag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod sagittis mollis. 
-              Nulla quis orci mollis, rutrum quam id, rhoncus massa. Donec ullamcorper, ligula non porta tempor, 
-              purus libero laoreet orci, sit amet auctor velit odio in erat. Nam hendrerit a nisl vel sollicitudin. 
-              Nullam est erat, blandit at neque eu, egestas dapibus ipsum. <span class="display-none">In eu hendrerit erat, nec eleifend nulla. 
-              Suspendisse ac elementum risus, sit amet ultricies mi. Orci varius natoque penatibus et magnis dis parturient montes, 
-              nascetur ridiculus mus. Etiam quis tellus efficitur, vehicula lacus nec, fringilla ligula. Donec vitae lacinia ante, 
-              nec pharetra libero. Duis faucibus, eros vitae vulputate iaculis, arcu eros venenatis tortor, ut scelerisque metus turpis id ex. 
-              Nullam nec arcu ac eros mattis dignissim.</span> 
+            <p id="about-parag">We wanted to say thank you for the support you've shown us during this long 2020.
+              We are back open to the public so please pop in, grab a drink and say hi. 
+              During the next few weeks we will still be able to do take-aways for your trips to the park or to collect Sparrow’s.
+              The fridge is still full of plenty of goodies, that change weekly. So come and pick something different to share.
+              Stay safe and drink beer. </span>
             </p>
         </div>
-        <div id="reservation">
-          <h2 id="title" class="text-center">Reservation</h2>
-          <form id="form-container" class="row g-3">
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword4">
-            </div>
-            <div class="col-12">
-              <label for="inputAddress" class="form-label">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="col-12">
-              <label for="inputAddress2" class="form-label">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="col-md-6">
-              <label for="inputCity" class="form-label">City</label>
-              <input type="text" class="form-control" id="inputCity">
-            </div>
-           <div class="col-12 text-center mt-3">
-             <button type="submit" class="btn btn-book">Count me in!</button>
-           </div>
-          </form>
-        <div>
       </div>
     </div>
   </div>
