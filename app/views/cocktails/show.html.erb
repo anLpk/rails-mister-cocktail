@@ -1,14 +1,18 @@
 <div class="container">
-  <div class="row m-2">
+  <div class="row d-md-flex d-lg-flex no-gutters">
+    <div class="col-lg-2 order-sm-1 order-lg-0 order-md-1">
       <h5 class="show-title"><%= @cocktail.name %></h5>
-      <% @cocktail.doses.each do |dose| %>
-        <%= link_to "Delete Doses", dose_path(dose), method: :delete, class: 'btn btn-delete' %>
-        <p class="show-text">Description:<%= dose.description %></p> <br>
-        <p class="show-text">Doses:<%= dose.ingredient.name %></p>
-      <% end %>
-  </div>
-    <div class="show-banner card-category" style="background-image: url('<%= cl_image_path @cocktail.photo.key %>')">
+      <div class="show-banner card-category" style="background-image: url('<%= cl_image_path @cocktail.photo.key %>')">
+      </div>
     </div>
+    <div class="col-lg-10 order-sm-2 order-lg-2 order-md-2">
+      <% @cocktail.doses.each do |dose| %>
+        <p class="show-text">Doses:<%= dose.ingredient.name %></p>
+        <p class="show-text">Description:<%= dose.description %></p> <br>
+        <%= link_to "Delete Doses", dose_path(dose), method: :delete, class: 'btn btn-outline-danger btn-lg' %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <div class="text-center">
