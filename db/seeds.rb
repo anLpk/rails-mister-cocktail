@@ -1,9 +1,18 @@
 require 'open-uri'
+require 'json'
 
 puts "cleaning up database"
 Cocktail.destroy_all
 
 puts "database is clean"
+
+Ingredient.delete_all
+url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+json = open(url).read
+result = JSON.parse(json)
+result['drinks'].each do |drink|
+  Ingredient.create(name: drink['strIngredient1'])
+end
 
 # puts 'Creating 8 coctails...'
 
@@ -48,12 +57,3 @@ puts "database is clean"
 # cocktail8.save
 
 # puts 'Finished!'
-
-
-Ingredient.delete_all
-url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
-json = open(url).read
-result = JSON.parse(json)
-result['drinks'].each do |drink|
-  Ingredient.create(name: drink['strIngredient1'])
-end
