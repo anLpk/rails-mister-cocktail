@@ -2,7 +2,7 @@
 <h6 class="show-title"><%= @cocktail.name %></h6>
   <div class="row d-md-flex d-lg-flex no-gutters">
     <div class="col-lg-5 order-sm-1 order-lg-0 order-md-1">
-      <div class="show-img" style="background-image: url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+      <div class="show-img" style="background-image: url('<%= cl_image_path @cocktail.photo.key%>')">
       </div>
     </div>
     <div class="col-lg-7 order-sm-2 order-lg-2 order-md-2">
