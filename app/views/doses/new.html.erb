@@ -4,7 +4,7 @@
   <div>
     <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.input :description, as: :text %>
-    <%= f.association :ingredient %>
+    <%= f.association :ingredient, input_html: { multiple: true, class: "multiple-select" }, include_hidden: false %>
     <%= f.submit "Add the Dose", class: "btn btn-flat" %>
     <% end %>
     <div>
@@ -14,5 +14,5 @@
 
 
 <div class="text-center">
-    <%= link_to 'Go Back', cocktails_path, class: 'btn btn-gradient' %>
+  <%= link_to 'Go Back', cocktails_path, class: 'btn btn-gradient' %>
 </div>
